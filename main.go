@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"os"
 	"net/http"
+	"runtime"
 )
 
 func Request(url string, chn chan <-string) {
@@ -19,7 +20,12 @@ func Request(url string, chn chan <-string) {
 	}
 
 	body, _ := ioutil.ReadAll(resp.Body)
-	chn <- fmt.Sprintf("[%.2fs] to request with [%v] for [%v]", secs, len(body), url)
+	chn <- fmt.Sprintf("[%.2fs] elapsed time for request [%s] with [%d] ", secs, url, len(body))
+}
+
+
+func init() {
+	runtime.GOMAXPROCS(runtime.NumCPU())
 }
 
 func main() {
@@ -34,5 +40,5 @@ func main() {
 		fmt.Println(<-chn)
 	}
 
-	fmt.Printf("[%.2fs] Request time.\n", time.Since(start).Seconds())
+	fmt.Printf("[%.2fs] elapsed time.\n", time.Since(start).Seconds())
 }

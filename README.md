@@ -29,11 +29,10 @@ $ crgo [url] [url] [url] ...
 Example to use with urls.    
 ```
 $ ./crgo http://www.google.com/ http://www.facebook.com/ http://www.terra.com.br/
-
-[0.13s] to request with [11517] for [http://www.google.com/]
-[0.95s] to request with [88022] for [http://www.facebook.com/]
-[0.92s] to request with [261321] for [http://www.terra.com.br/]
-[2.19s] Request time.
+[0.14s] elapsed time for request [http://www.google.com/] with [11546] 
+[0.86s] elapsed time for request [http://www.facebook.com/] with [88051] 
+[0.98s] elapsed time for request [http://www.terra.com.br/] with [262425] 
+[1.77s] elapsed time.
 ```
 
 ## License
