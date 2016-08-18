@@ -1,5 +1,6 @@
 # Concurrence Request Go #
------------------------
+
+- Use to test the time os request for websites.
 - Concurrence Request 
 - Version: 1.0.0
 
